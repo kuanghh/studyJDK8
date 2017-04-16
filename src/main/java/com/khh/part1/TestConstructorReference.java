@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 
 /**
  * Created by 951087952@qq.com on 2017/4/14.
- * 测试 lambda构造器引用
+ * 测试 构造器引用
  */
 public class TestConstructorReference {
 

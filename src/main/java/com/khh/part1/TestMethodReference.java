@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 /**
  * Created by 951087952@qq.com on 2017/4/14.
- * 测试  lambda方法引用
+ * 测试  方法引用
  */
 public class TestMethodReference {
 

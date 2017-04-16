@@ -7,7 +7,7 @@ import java.util.function.BiFunction;
 
 /**
  * Created by 951087952@qq.com on 2017/4/14.
- * 测试  lambda函数式接口
+ * 测试  函数式接口
  */
 public class TestFunctionalInterface {
 
