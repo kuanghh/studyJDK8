@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 /**
@@ -53,5 +54,6 @@ public class TestExtractAndConcat {
         Stream<? extends Serializable> concat = Stream.concat(stream1, stream2);
         concat.forEach(System.out::print);
         //输出  ： 1234hellogroovyjavaJRuby
+
     }
 }
