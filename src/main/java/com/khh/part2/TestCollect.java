@@ -95,4 +95,47 @@ public class TestCollect {
         System.out.println(sum); //20
         System.out.println(max);  //6
     }
+
+    /**
+     * 收集结果返回一个 map(有时候键会重复，避免此情况，用了(existingValue, newValue) -> existingValue解决)
+     * @throws Exception
+     */
+    @Test
+    public void test6() throws Exception{
+        Stream<Locale> locals = Stream.of(Locale.getAvailableLocales());
+
+        Map<String, String> collect = locals.collect(Collectors.toMap(
+                l -> l.getDisplayLanguage(),
+                l -> l.getDisplayLanguage(l),
+                (existingValue, newValue) -> existingValue
+        ));
+        for (Map.Entry<String, String> entries : collect.entrySet() ){
+            System.out.println(entries.getKey() + ":" + entries.getValue());
+        }
+    }
+
+    /**
+     * 收集结果返回一个 map(收集成一个map，键为国家，值为该国家的语言集合)
+     * @throws Exception
+     */
+    @Test
+    public void test7() throws Exception{
+        Stream<Locale> locals = Stream.of(Locale.getAvailableLocales());
+
+        Map<String, Set<String>> collect = locals.collect(Collectors.toMap(
+                l -> l.getDisplayCountry(),
+                l -> Collections.singleton(l.getDisplayLanguage()),
+                (a ,b ) -> {
+                    Set<String> r = new HashSet<String>(a);
+                    r.addAll(b);
+                    return r;
+                }
+        ));
+        for (Map.Entry<String, Set<String>> entries : collect.entrySet() ){
+            System.out.println(entries.getKey());
+            Set<String> strs = entries.getValue();
+            strs.forEach(System.out::println);
+            System.out.println("--------------");
+        }
+    }
 }
