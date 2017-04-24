@@ -19,5 +19,7 @@ public class PracticeFive {
         Stream<Long> stream = Stream.iterate(0L, calc(25214903917L,11,Double.valueOf(Math.pow(2,48)).longValue()));
         Stream<Long> limit = stream.limit(5);
         limit.forEach(System.out::println);
+
+
     }
 }
