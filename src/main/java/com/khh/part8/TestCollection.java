@@ -70,4 +70,60 @@ public class TestCollection {
         System.out.println(tom);
     }
 
+    /**
+     * bitSet最低的长度为64,默认长度也为64
+     * @throws Exception
+     */
+    @Test
+    public void test4() throws  Exception{
+        BitSet bitSet = new BitSet();
+        System.out.println(bitSet.size());  //64
+
+        BitSet bitSet2 = new BitSet(32);
+        System.out.println(bitSet2.size());  //64
+
+        BitSet bitSet3 = new BitSet(128);
+        System.out.println(bitSet3.size());  //128
+    }
+
+    /**
+     *  set（int index） 方法把 index位置的数字由0变成1
+     *  clear(int index) 方法把 index位置的数字变成0
+     *  默认全部位置的数字都为0
+     * @throws Exception
+     */
+    @Test
+    public void test5() throws  Exception{
+        BitSet bitSet = new BitSet();
+        bitSet.set(0);
+        System.out.println(bitSet.get(0));//true
+        System.out.println(bitSet.get(1));//false
+        bitSet.clear(0);
+        System.out.println(bitSet.get(0));//false
+        System.out.println((byte)0b10101100);
+    }
+
+
+
+
+    /**
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testn() throws  Exception{
+        byte[] bytes = {(byte)0b10101100,(byte)0b00101000};
+        BitSet primes = BitSet.valueOf(bytes);
+        System.out.println(primes.size());//64
+        primes.stream().forEach(System.out::println);
+        /**
+         * 2
+         * 3
+         * 5
+         * 7
+         * 11
+         * 13
+         */
+    }
+
 }
