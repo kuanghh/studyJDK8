@@ -6,6 +6,8 @@ import java.util.stream.Stream;
 
 /**
  * Created by 951087952@qq.com on 2017/4/22.
+ *
+ * 使用Stream.iterate来得到一个包含随机数字的无限流
  */
 public class PracticeFive {
 

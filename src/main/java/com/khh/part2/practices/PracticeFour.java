@@ -8,6 +8,9 @@ import java.util.stream.Stream;
 /**
  * Created by 951087952@qq.com on 2017/4/22.
  *
+ *  存在一个数组  int[] values = {1,4,9,16};
+ *  则Stream.of（values）的结果是  得到一个  数组类型的流
+ *  可以通过Instream.of（int数组类型）得到一个int类型的流
  */
 public class PracticeFour {
 
